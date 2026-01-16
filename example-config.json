@@ -1,0 +1,12 @@
+{
+  "name": "claude-mcp-public-example",
+  "version": "1.0.0",
+  "description": "公开仓库示例配置文件",
+  "mcpServers": {
+    "example": {
+      "type": "stdio",
+      "command": "echo",
+      "args": ["Hello from public repo!"]
+    }
+  }
+}
