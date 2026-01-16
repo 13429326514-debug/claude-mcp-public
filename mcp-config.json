@@ -1,0 +1,49 @@
+{
+  "_comment": "Claude Code MCP 配置模板 - 将此配置合并到你的 .claude.json 文件的 mcpServers 部分",
+  "mcpServers": {
+    "_comment_chrome": "Chrome DevTools - 浏览器自动化工具",
+    "chrome-devtools": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "chrome-devtools-mcp@latest"
+      ],
+      "env": {}
+    },
+
+    "_comment_figma": "Figma - 设计工具集成 (需要替换 API Key)",
+    "figma": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "figma-developer-mcp",
+        "--figma-api-key=YOUR_FIGMA_API_KEY",
+        "--stdio"
+      ],
+      "env": {}
+    },
+
+    "_comment_context7": "Context7 - 库文档查询工具",
+    "context7": {
+      "type": "http",
+      "url": "https://mcp.context7.com/mcp"
+    },
+
+    "_comment_github": "GitHub - 代码仓库管理 (需要替换 Token)",
+    "github": {
+      "type": "http",
+      "url": "https://api.githubcopilot.com/mcp/",
+      "headers": {
+        "Authorization": "Bearer YOUR_GITHUB_TOKEN"
+      }
+    }
+  },
+
+  "_notes": {
+    "installation": "1. 将此文件中的 mcpServers 内容复制到你的 .claude.json",
+    "figma_key": "获取方式: https://www.figma.com/developers/api#authentication",
+    "github_token": "获取方式: https://github.com/settings/tokens (需要 repo 权限)",
+    "verification": "运行 'claude mcp list' 验证安装"
+  }
+}
